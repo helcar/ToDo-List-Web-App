@@ -8,6 +8,7 @@ var newItems = ["the first item", "the second item", "the third item"];
 
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended:true}));
+app.use(express.static("public"));
 
 app.get("/", function(req, res){
 

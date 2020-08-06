@@ -2,22 +2,30 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>The day</title>
+    <title>ToDo List Web App</title>
+    <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
 
-    <h1> <%= kindOfDay %> ToDo List </h1>
+    <div class="box" id="heading">
+      <h1> <%= kindOfDay %> </h1>
+    </div>
 
-    <ul>
+    <div class="box">
+
       <% for (var i = 0; i < theNewItem.length; i++){ %>
-        <li><%= theNewItem[i] %></li>
+      <div class="item">
+        <input type="checkbox" name="" value="">
+          <p><%= theNewItem[i] %></p>
+      </div>
       <% } %>
-    </ul>
 
-    <form class="" action="/" method="post">
-      <input type="text" name="newItem" value="">
-      <button type="submit" name="button">Click</button>
-    </form>
+      <form class="item" action="/" method="post">
+        <input type="text" name="newItem" placeholder="New Item" autocomplete="on">
+        <button type="submit" name="button">+</button>
+      </form>
+
+    </div>
 
   </body>
 </html>
