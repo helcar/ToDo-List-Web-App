@@ -4,7 +4,7 @@ const port = 3000;
 
 const app = express();
 
-var newItem = "";
+var newItems = ["the first item", "the second item", "the third item"];
 
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended:true}));
@@ -20,11 +20,12 @@ app.get("/", function(req, res){
 
   var day = todayDate.toLocaleDateString("en-US", options);
 
-  res.render("list", {kindOfDay: day, theNewItem: newItem});
+  res.render("list", {kindOfDay: day, theNewItem: newItems});
 })
 
 app.post("/", function(req, res){
-  newItem = req.body.newItem;
+  var item = req.body.newItem;
+  newItems.push(item);
   res.redirect("/");
   //
 })

@@ -9,10 +9,9 @@
     <h1> <%= kindOfDay %> ToDo List </h1>
 
     <ul>
-      <li>the first item</li>
-      <li>the second item</li>
-      <li>the third item</li>
-      <li><%= theNewItem %></li>
+      <% for (var i = 0; i < theNewItem.length; i++){ %>
+        <li><%= theNewItem[i] %></li>
+      <% } %>
     </ul>
 
     <form class="" action="/" method="post">
