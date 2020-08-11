@@ -15,12 +15,13 @@
             <input type="checkbox" onChange="this.form.submit()" name="deleteID" value="<%= item._id %>">
               <p><%= item.name %></p>
           </div>
+          <input type="hidden" name="listName" value= "<%= listOfTitle %>">
         </form>
       <% }) %>
 
       <form class="item" action="/" method="post">
         <input type="text" name="newItem" placeholder="New Item" autocomplete="on">
-        <button type="submit" name="list" value = <%=listOfTitle %>>+</button>
+        <button type="submit" name="list" value = "<%=listOfTitle %>">+</button>
       </form>
 
     </div>
