@@ -3,8 +3,8 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const _ = require("lodash");
 const date = require(__dirname + "/date.js");
-const portSer = 3000;
-const portDB = 27017
+// const portSer = 3000;
+// const portDB = 27017
 
 const app = express();
 var day = date.getDate();
@@ -125,6 +125,11 @@ app.get("/about", function(req, res){
   res.render("about");
 })
 
-app.listen(portSer, function(){
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+}
+
+app.listen(port, function(){
   console.log("Hey there!");
 })
