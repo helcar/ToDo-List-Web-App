@@ -13,7 +13,7 @@ app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static("public"));
 
-mongoose.connect("mongodb://localhost:" + portDB + "/todolistDB", {
+mongoose.connect("mongodb+srv://admin-sally:test123@cluster0.jjbda.mongodb.net/todolistDB?retryWrites=true&w=majority", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false
@@ -37,7 +37,7 @@ const listSchema = {
 const List = mongoose.model("List", listSchema);
 
 app.get("/", function(req, res){
-  console.log(day);
+  // console.log(day);
   Item.find({},function(err,items){
     if(items.length === 0){
       Item.insertMany(defaultItems, function(err){
