@@ -13,7 +13,7 @@ app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static("public"));
 
-mongoose.connect("mongodb+srv://admin-sally:test123@cluster0.jjbda.mongodb.net/todolistDB?retryWrites=true&w=majority", {
+mongoose.connect("<your mongodb link>", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false
